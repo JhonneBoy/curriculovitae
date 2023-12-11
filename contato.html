@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-mQ3B1C/lqBDbFGnaKAwao8g9wEsPQeJ0p26K43v8E+JJLImi2gx5gT5FfXVEJpbl" crossorigin="anonymous">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHq2vbbn7G-uWHzf0om_61k1ejbP0KXDo&callback=inicializarMapa" async defer></script>
+    <header>
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+        </a>
+    </header>
+    <title>Contato</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar">
+            <ul class="menu">
+	        	<li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="video.html">Apresentação</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <section class="main-content">
+            <h1>Contato</h1>
+
+            <div class="info-contato">
+                <p><strong>Telefone:</strong> (11) 2725-6351</p>
+                <p><strong>Celular:</strong> (11) 97679-7311</p>
+
+                <!-- Adicionando links clicáveis para Email, Linkedin e Instagram -->
+                <p><strong>Email:</strong> <a href="mailto:contato@eliasouza.com">contato@eliasouza.com</a></p>
+                <p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/jhonatan-eliasouza/" target="_blank">https://www.linkedin.com/in/jhonatan-eliasouza/</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/jhntn_es/" target="_blank">https://www.instagram.com/jhntn_es/</a></p>
+            </div>
+
+            <!-- Mapa -->
+            <div id="map"></div>
+
+            <!-- Caixa de Comentários -->
+            <div class="comentarios">
+                <h2>Deixe um Comentário</h2>
+                <textarea id="comentarioTexto" placeholder="Fale comigo"></textarea>
+                <button onclick="enviarComentario()">Enviar Comentário</button>
+            </div>
+
+            <!-- Comentários Salvos -->
+            <div id="comentariosSalvos"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHq2vbbn7G-uWHzf0om_61k1ejbP0KXDo&callback=inicializarMapa" async defer></script>
+    <!-- Adicione no final do corpo do seu HTML, após o script da API do Google Maps -->
+<script>
+    function inicializarMapa() {
+        // Substitua LATITUDE e LONGITUDE pelos valores reais de sua localização
+        var myLatLng = { lat: -23.59392350360263, lng: -46.51242010397556 };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Sua Localização'
+        });
+    }
+</script>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Jhonatan Elias de Souza - Desenvolvedor Web</p>
+        <p>Email: jhonatan@eliasouza.com | Telefone: (11) 1234-5678</p>
+    </div>
+</footer>
+</body>
+</html>
